@@ -12,7 +12,7 @@ import axios from 'axios';
 
 import  store  from "./redux/store";
 
-axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'https://smart-api-utjh.onrender.com'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
