@@ -1,0 +1,45 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.custom-font-bold{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700; 
+}
+
+.custom-font-medium{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500; 
+}
+.custom-font-regular{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400; 
+}
+
+.custom-font-light{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+.customHover{
+  position: absolute;
+  background-color: #bfdbfe;
+  border-radius: 100%;
+}
+
