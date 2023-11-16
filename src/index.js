@@ -10,7 +10,7 @@ import axios from 'axios';
 
 import  store  from "./redux/store";
 
-axios.defaults.baseURL = 'http://54.165.140.58/';
+axios.defaults.baseURL = 'https://smart-api-production.up.railway.app/';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
