@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import hero from "../assets/hero.jpg";
 import AOS from "aos";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const HeroHeader = () => {
+  const navigate = useNavigate();
   const globalLang = useSelector((state) => state.languageReducer.language);
 
   const [lang, setLang] = useState(globalLang);
@@ -31,6 +33,12 @@ const HeroHeader = () => {
               Nos especializamos en ayudar a negocios a digitalizarse y atraer
               tráfico a través de campañas de publicidad efectivas.
             </p>
+            <button className="text-center w-full lg:w-1/2 my-4 text-xl text-white custom-font-light border bg-blue-600 rounded-full p-4 hover:bg-blue-800 transition duration-300 ease-in-out">
+              <a href="#calendly">
+                Agendá tu consultoría{" "}
+                <span className="font-semibold">GRATUITA</span>
+              </a>
+            </button>
           </div>
           <div className="flex mb-4 justify-center lg:w-1/2 lg:flex-none lg:mb-0 lg:justify-start z-negative">
             <img src={hero} alt="Hero" className="h-4/5 lg:h-89" />

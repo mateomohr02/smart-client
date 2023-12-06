@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { useSelector } from "react-redux";
 import Form from "./Form";
 import AlertMessage from "./AlertMessage";
@@ -14,6 +14,8 @@ const Contact = () => {
 
   const [lang, setLang] = useState(globalLang);
 
+  const calendlyRef = useRef(null);
+
   useEffect(() => {
     setLang(globalLang);
   }, [globalLang]);
@@ -23,6 +25,39 @@ const Contact = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  useLayoutEffect(() => {
+    // Calendly script initialization
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+  
+    let currentRef = calendlyRef.current; // Guardar una copia del ref
+  
+    script.onload = () => {
+      // Widget initialization
+      if (currentRef) {
+        // Remove existing content from the container
+        currentRef.innerHTML = "";
+        // Initialize new Calendly widget in the same container
+        window.Calendly.initInlineWidget({
+          url: "https://calendly.com/smart-agenda/reunion15minutos",
+          parentElement: currentRef,
+        });
+      }
+    };
+  
+    document.body.appendChild(script);
+  
+    // Clean up
+    return () => {
+      if (currentRef) {
+        // Remove existing content from the container when the component unmounts
+        currentRef.innerHTML = "";
+      }
+    };
+  }, []); 
 
   const showAndHideAlert = () => {
     setShowAlert(true);
@@ -40,8 +75,22 @@ const Contact = () => {
           data-aos="fade-down"
         >
           <h3 className="text-left text-2xl custom-font-bold lg:text-4xl lg:mx-auto lg:text-center my-10">
-            ¿Listo para dar el siguiente paso? Contactanos.{" "}
+            ¿Listo para dar el siguiente paso?{" "}
           </h3>
+
+          <div
+            data-aos="fade-down"
+            id="calendly"
+            className="calendly-inline-widget h-720 mt-calendly"
+            ref={calendlyRef}
+            data-url="https://calendly.com/smart-agenda/reunion15minutos"
+          ></div>
+
+          <h3 className="text-left text-2xl custom-font-bold lg:text-4xl lg:mx-auto lg:text-center my-10">
+            {" "}
+            Ponete en contacto con nosotros{" "}
+          </h3>
+
           <div
             id="contact"
             className="flex flex-col lg:flex-row items-center justify-between mb-32"
@@ -94,6 +143,15 @@ const Contact = () => {
           <h3 className="text-left text-2xl custom-font-bold lg:text-4xl lg:mx-auto lg:text-center my-10">
             Ready to take the next step? Contact us.{" "}
           </h3>
+          
+          <div
+            data-aos="fade-down"
+            id="calendly"
+            className="calendly-inline-widget h-720 mt-calendly"
+            ref={calendlyRef}
+            data-url="https://calendly.com/smart-agenda/reunion15minutos"
+          ></div>
+
           <div
             id="contact"
             className="flex flex-col lg:flex-row items-center justify-between mb-32"
@@ -139,6 +197,7 @@ const Contact = () => {
           {showAlert && <AlertMessage />}
         </div>
       )}
+
     </>
   );
 };

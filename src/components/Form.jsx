@@ -99,12 +99,12 @@ const Form = ({ showAndHideAlert }) => {
       lang === "Es" ? (
         <form
           onSubmit={handleSubmit}
-          className="w-full lg:mx-56 p-4 border border-gray-300 rounded"
+          className="w-full lg:mx-56 p-4 border border-black rounded bg-blue-200"
         >
           <div className="mb-2 flex flex-col lg:flex-row justify-between">
             <div className="lg:w-1/2 lg:mr-2">
               <label
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium"
                 htmlFor="nombre"
               >
                 Nombre:
@@ -123,7 +123,7 @@ const Form = ({ showAndHideAlert }) => {
             </div>
             <div className="my-2 lg:my-0 lg:w-1/2 lg:ml-2">
               <label
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium"
                 htmlFor="apellido"
               >
                 Apellido:
@@ -145,7 +145,7 @@ const Form = ({ showAndHideAlert }) => {
           <div className="mb-2 flex flex-col lg:flex-row justify-between">
             <div className="lg:w-1/2 lg:mr-2">
               <label
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium"
                 htmlFor="email"
               >
                 Correo Electrónico:
@@ -166,7 +166,7 @@ const Form = ({ showAndHideAlert }) => {
             </div>
             <div className="my-2 lg:my-0 lg:w-1/2 lg:ml-2">
               <label
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium"
                 htmlFor="telefono"
               >
                 Teléfono:
@@ -189,7 +189,7 @@ const Form = ({ showAndHideAlert }) => {
 
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-600"
+              className="block text-sm font-medium"
               htmlFor="mensaje"
             >
               Mensaje:
@@ -217,12 +217,12 @@ const Form = ({ showAndHideAlert }) => {
       ) : (
         <form
   onSubmit={handleSubmit}
-  className="w-full lg:mx-56 p-4 border border-gray-300 rounded"
+  className="w-full lg:mx-56 p-4 border border-gray-300 rounded bg-blue-200"
 >
   <div className="mb-2 flex flex-col lg:flex-row justify-between">
     <div className="lg:w-1/2 lg:mr-2">
       <label
-        className="block text-sm font-medium text-gray-600"
+        className="block text-sm font-medium"
         htmlFor="name"
       >
         Name:
@@ -241,7 +241,7 @@ const Form = ({ showAndHideAlert }) => {
     </div>
     <div className="my-2 lg:my-0 lg:w-1/2 lg:ml-2">
       <label
-        className="block text-sm font-medium text-gray-600"
+        className="block text-sm font-medium"
         htmlFor="lastName"
       >
         Last Name:
@@ -263,7 +263,7 @@ const Form = ({ showAndHideAlert }) => {
   <div className="mb-2 flex flex-col lg:flex-row justify-between">
     <div className="lg:w-1/2 lg:mr-2">
       <label
-        className="block text-sm font-medium text-gray-600"
+        className="block text-sm font-medium"
         htmlFor="email"
       >
         Email:
@@ -284,7 +284,7 @@ const Form = ({ showAndHideAlert }) => {
     </div>
     <div className="my-2 lg:my-0 lg:w-1/2 lg:ml-2">
       <label
-        className="block text-sm font-medium text-gray-600"
+        className="block text-sm font-medium"
         htmlFor="phone"
       >
         Phone:
@@ -307,7 +307,7 @@ const Form = ({ showAndHideAlert }) => {
 
   <div className="mb-4">
     <label
-      className="block text-sm font-medium text-gray-600"
+      className="block text-sm font-medium"
       htmlFor="message"
     >
       Message:

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import logo from "../../assets/logow.svg";
+import { Link }from 'react-router-dom'
 import { useDispatch } from "react-redux";
 import { changeLanguage } from "../../redux/actions/changeLanguage";
 
@@ -107,8 +108,8 @@ const MobileNavBar = () => {
 
         {lang === "Es" ? (
           <div className="flex flex-col">
-            <a
-              href="#detail"
+            <Link
+              to="/"
               className={`${
                 titleOpen ? "opacity-100" : "hidden"
               } p-3 custom-font-regular text-xl text-white`}
@@ -116,9 +117,9 @@ const MobileNavBar = () => {
             >
               {" "}
               Nosotros{" "}
-            </a>
-            <a
-              href="#solutions"
+            </Link>
+            <Link
+              to="/solutions"
               className={`${
                 titleOpen ? "opacity-100" : "hidden"
               } p-3 custom-font-regular text-xl text-white `}
@@ -126,9 +127,9 @@ const MobileNavBar = () => {
             >
               {" "}
               Soluciones{" "}
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className={`${
                 titleOpen ? "opacity-100" : "hidden"
               } p-3 custom-font-regular text-xl text-white`}
@@ -136,12 +137,12 @@ const MobileNavBar = () => {
             >
               {" "}
               Contacto{" "}
-            </a>
+            </Link>
           </div>
         ) : (
           <div className="flex flex-col">
-            <a
-              href="#detail"
+            <Link
+              to="/"
               className={`${
                 titleOpen ? "opacity-100" : "hidden"
               } p-3 custom-font-regular text-xl text-white`}
@@ -149,9 +150,9 @@ const MobileNavBar = () => {
             >
               {" "}
               About Us{" "}
-            </a>
-            <a
-              href="#solutions"
+            </Link>
+            <Link
+              to="/solutions"
               className={`${
                 titleOpen ? "opacity-100" : "hidden"
               } p-3 custom-font-regular text-xl text-white `}
@@ -159,9 +160,9 @@ const MobileNavBar = () => {
             >
               {" "}
               Solutions{" "}
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className={`${
                 titleOpen ? "opacity-100" : "hidden"
               } p-3 custom-font-regular text-xl text-white`}
@@ -169,7 +170,7 @@ const MobileNavBar = () => {
             >
               {" "}
               Contact{" "}
-            </a>
+            </Link>
           </div>
         )}
       </div>
